@@ -12,87 +12,85 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('assets/purple.png'),
-              fit: BoxFit.cover,
-            ),
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/purple.png'),
+            fit: BoxFit.cover,
           ),
-          child: Padding(
-            padding: EdgeInsets.fromLTRB(10.0, 160.0, 0.0, 0.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
-                Text(
-                  'Welcome!',
-                  style: TextStyle(
-                    fontSize: 50.0,
-                    fontFamily: 'IndieFlower',
-                    letterSpacing: 2.0,
-                    color: Colors.indigo[900],
-                    fontWeight: FontWeight.bold,
-                  ),
+        ),
+        child: Padding(
+          padding: EdgeInsets.fromLTRB(10.0, 210.0, 0.0, 0.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              Text(
+                'Welcome!',
+                style: TextStyle(
+                  fontSize: 50.0,
+                  fontFamily: 'IndieFlower',
+                  letterSpacing: 2.0,
+                  color: Colors.indigo[900],
+                  fontWeight: FontWeight.bold,
                 ),
-                SizedBox(height: 30.0),
-                Text(
-                  'Sign Language Translator App',
-                  style: TextStyle(
-                    letterSpacing: 1.0,
-                    fontSize: 20.0,
-                    fontFamily: 'Architect',
-                    color: Colors.white,
-                  ),
+              ),
+              SizedBox(height: 30.0),
+              Text(
+                'Sign Language Translator App',
+                style: TextStyle(
+                  letterSpacing: 1.0,
+                  fontSize: 20.0,
+                  fontFamily: 'Architect',
+                  color: Colors.white,
                 ),
-                SizedBox(height: 100.0),
-                Text(
-                  'Click below to know about Devs',
-                  style: TextStyle(
-                    letterSpacing: 2.0,
-                    fontSize: 20.0,
-                    color: Colors.white,
-                  ),
+              ),
+              SizedBox(height: 100.0),
+              Text(
+                'Click below to know about Devs',
+                style: TextStyle(
+                  letterSpacing: 2.0,
+                  fontSize: 20.0,
+                  color: Colors.white,
                 ),
-                SizedBox(height: 40.0),
-                Container(
-                  width: 160.0,
-                  height: 50.0,
-                  child: RaisedButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/about');
-                    },
-                    child: Text(
-                      'About',
-                      style: TextStyle(
-                        letterSpacing: 2.0,
-                        fontSize: 20.0,
-                        color: Colors.white,
-                      ),
-                    ),
-                    color: Colors.indigo[800],
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
+              ),
+              SizedBox(height: 40.0),
+              Container(
+                width: 160.0,
+                height: 50.0,
+                child: RaisedButton(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/about');
+                  },
+                  child: Text(
+                    'About',
+                    style: TextStyle(
+                      letterSpacing: 2.0,
+                      fontSize: 20.0,
+                      color: Colors.white,
                     ),
                   ),
+                  color: Colors.indigo[800],
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
                 ),
-                SizedBox(height: 170.0),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Icon(Icons.copyright, color: Colors.white),
-                    Text(
-                      'SignLanguage Translator 2020',
-                      style: TextStyle(
-                        letterSpacing: 2.0,
-                        fontSize: 12.0,
-                        color: Colors.white,
-                      ),
+              ),
+              SizedBox(height: 140.0),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Icon(Icons.copyright, color: Colors.white),
+                  Text(
+                    'SignLanguage Translator 2020',
+                    style: TextStyle(
+                      letterSpacing: 2.0,
+                      fontSize: 12.0,
+                      color: Colors.white,
                     ),
-                  ],
-                ),
-              ],
-            ),
+                  ),
+                ],
+              ),
+            ],
           ),
         ),
       ),
