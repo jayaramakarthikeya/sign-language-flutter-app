@@ -4,6 +4,7 @@ from onnx_tf.backend import prepare
 import tensorflow as tf
 import torch
 import numpy as np
+from tensorflow import keras
 from train import ConvNet
 import warnings
 
@@ -43,7 +44,7 @@ def main():
     convert_onnx_to_tf()
 
     tf_graph = load_pb('sign_language.pb')
-    sess = tf.compat.v1.Session(graph=tf_graph)
+    sess = tf.Session(graph=tf_graph)
 
     # Show tensor names in graph
     for op in tf_graph.get_operations():
@@ -54,6 +55,14 @@ def main():
     
     output = sess.run(output_tensor, feed_dict={input_tensor: dummy_input})
     print(output)
+
+    #Convert the model
+    convertor = tf.compat.v1.lite.TFLiteConverter.from_frozen_graph('sign_language.pb',['input'],['add_6'])
+    tflite_model = convertor.convert()
+
+    #Save the model
+    with open('sign_language.tflite','wb') as f:
+        f.write(tflite_model)
 
 if __name__ == '__main__':
     main()
